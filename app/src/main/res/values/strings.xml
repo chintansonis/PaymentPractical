@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CheckoutPractical</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="proceed_to_checkout_fragment_label">Add Card</string>
+    <string name="secure_payment_webview_fragment_label">3D Secure Payment</string>
+    <string name="payment_conclusion_fragment_label">PaymentConclusion</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="proceed_checkout">Proceed to Pay</string>
+    <string name="go_to_add_card">Go to Add card</string>
+    <string name="please_wait_msg">Please don\'t press back or leave the page until payment is being completed…</string>
+    <string name="payment_success_msg">Payment successfully completed</string>
+    <string name="success_url">https://www.success.com</string>
+    <string name="fail_url">https://fail.com</string>
+
+    ******************hint messages**************
+    <string name="hint_enter_cvv">Enter CVV</string>
+    <string name="hint_enter_expiry_date">Enter Expiry date (MM/YYYY)</string>
+    <string name="hint_enter_card_number">Enter Card number</string>
+
+    *******************errors***************************
+    <string name="generic_error">Something went wrong.</string>
+    <string name="connection_error">Please check your internet connection</string>
+    <string name="server_error">A server error occurred, please try again later</string>
+    <string name="payment_fail_msg">Payment failed</string>
+    <string name="error_invalid_number">Please enter valid card number</string>
+    <string name="error_invalid_expiry_date">Please enter valid expiry date of card</string>
+    <string name="error_invalid_cvv">Please enter valid CVV</string>
+
+</resources>

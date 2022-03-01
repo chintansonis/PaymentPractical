@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ProceedToPayFragment">
+
+    <fragment
+        android:id="@+id/ProceedToPayFragment"
+        android:name="com.checkoutcom.checkoutpractical.ui.fragments.ProceedToCheckoutFragment"
+        android:label="@string/proceed_to_checkout_fragment_label"
+        tools:layout="@layout/fragment_checkout">
+
+        <action
+            android:id="@+id/action_ProceedToPayFragment_to_SecurePaymentWebviewFragment"
+            app:destination="@id/SecurePaymentWebviewFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecurePaymentWebviewFragment"
+        android:name="com.checkoutcom.checkoutpractical.ui.fragments.SecurePaymentWebviewFragment"
+        android:label="@string/secure_payment_webview_fragment_label"
+        tools:layout="@layout/fragment_secure_payment_webview">
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_SecurePaymentWebviewFragment_to_PaymentConclusionFragment"
+            app:destination="@id/PaymentConclusionFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/PaymentConclusionFragment"
+        android:name="com.checkoutcom.checkoutpractical.ui.fragments.PaymentConclusionFragment"
+        android:label="@string/payment_conclusion_fragment_label"
+        tools:layout="@layout/fragment_sucess_failure">
+        <argument
+            android:name="paymentMessage"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_PaymentConclusionFragment_to_ProceedToPayFragment"
+            app:destination="@id/ProceedToPayFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/PaymentConclusionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
