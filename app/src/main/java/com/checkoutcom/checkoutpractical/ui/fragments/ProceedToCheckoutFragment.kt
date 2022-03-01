@@ -143,11 +143,11 @@ class ProceedToCheckoutFragment : Fragment() {
      * detecting card type on UI, when user typing card number
      */
     private fun checkCardType(value: String) {
-        if (value.length > 3 && CardUtil.getCardType(value).imgCardDrawbleId > 0) {
+        if (value.length > 2 && CardUtil.getCardType(value).imgCardDrawbleId > 0) {
             binding.textInputCardNumber.startIconDrawable =
                 ContextCompat.getDrawable(requireContext(),
                     CardUtil.getCardType(value).imgCardDrawbleId)
-        } else if (value.length < 3) {
+        } else if (value.length < 2) {
             binding.textInputCardNumber.startIconDrawable = null
         }
 

@@ -8,18 +8,26 @@ import com.checkoutcom.checkoutpractical.R
  * https://github.com/checkout/checkoutkit-android/blob/master/checkoutkit/src/main/java/com/checkout/CardValidator.java
  *
  */
-sealed class CardType(val pattern: String, val maxCVVLength: Int, val imgCardDrawbleId: Int) {
+sealed class CardType(
+    val cardTypename: String,
+    val pattern: String,
+    val maxCVVLength: Int,
+    val imgCardDrawbleId: Int,
+) {
 
-    object Visa : CardType("^4[0-9]{12}(?:[0-9]{3})?$", 3, R.drawable.visa)
+    object Visa : CardType("Visa", "^4[0-9]{12}(?:[0-9]{3})?$", 3, R.drawable.visa)
     object MasterCard :
-        CardType("^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}\$",
+        CardType("MasterCard",
+            "^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}\$",
             3,
             R.drawable.mastercard)
 
-    object AmericanExpress : CardType("^3[47][0-9]{5,}\$", 4, R.drawable.amex)
-    object DinersClub : CardType("^3(?:0[0-5]|[68][0-9])[0-9]{4,}\$", 3, R.drawable.dinersclub)
-    object Discover : CardType("^6(?:011|5[0-9]{2})[0-9]{3,}\$", 3, R.drawable.discover)
-    object Jcb : CardType("^(?:2131|1800|35[0-9]{3})[0-9]{3,}\$", 3, R.drawable.jcb)
-    object Default : CardType("", 3, 0)
+    object AmericanExpress : CardType("AmericanExpress", "^3[47][0-9]{5,}\$", 4, R.drawable.amex)
+    object DinersClub :
+        CardType("DinersClub", "^3(?:0[0-5]|[68][0-9])[0-9]{4,}\$", 3, R.drawable.dinersclub)
+
+    object Discover : CardType("Discover", "^6(?:011|5[0-9]{2})[0-9]{3,}\$", 3, R.drawable.discover)
+    object Jcb : CardType("Jcb", "^(?:2131|1800|35[0-9]{3})[0-9]{3,}\$", 3, R.drawable.jcb)
+    object Default : CardType("Default", "", 3, 0)
 
 }

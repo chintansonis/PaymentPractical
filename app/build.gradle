@@ -73,5 +73,4 @@ dependencies {
 
     // Dependencies for local unit tests
     testImplementation "junit:junit:$junitVersion"
-    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
