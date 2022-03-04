@@ -123,7 +123,7 @@ object CardUtil {
     fun isValidExpirationDate(expirationDate: String): Boolean {
         val expDateParts: Array<String> = expirationDate.split("/").toTypedArray()
 
-        if (expDateParts[0].length != 2 || expDateParts[1].length != 4 || expDateParts[0].isEmpty() || expDateParts[1].isEmpty()) {
+        if (expDateParts.size == 1 || expDateParts[0].isEmpty() || expDateParts[0].length != 2 || expDateParts[1].isEmpty() || expDateParts[1].length != 4) {
             return false
         }
 
