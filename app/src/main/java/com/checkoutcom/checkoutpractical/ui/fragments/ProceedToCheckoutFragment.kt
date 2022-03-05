@@ -65,10 +65,10 @@ class ProceedToCheckoutFragment : Fragment() {
         addTextChangeListeners()
 
         binding.btnProceed.setOnClickListener {
+            requireContext().hideKeyboard(binding.btnProceed)
             if (!requireContext().isConnected) {
                 view?.snackbar(getString(R.string.connection_error))
             } else {
-                requireContext().hideKeyboard(binding.btnProceed)
                 clearAllPreviousErrorMessages()
                 proceedToCheckoutviewModel.onClickProceedToPayment()
             }
