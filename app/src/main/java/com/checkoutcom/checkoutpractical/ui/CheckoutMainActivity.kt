@@ -5,13 +5,14 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.checkoutcom.checkoutpractical.R
 import com.checkoutcom.checkoutpractical.databinding.ActivityMainBinding
+import com.checkoutcom.checkoutpractical.extensions.snackbar
+import com.checkoutcom.checkoutpractical.ui.fragments.PaymentConclusionFragmentDirections
+import com.checkoutcom.checkoutpractical.ui.fragments.SecurePaymentWebviewFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -41,12 +42,21 @@ class CheckoutMainActivity : AppCompatActivity() {
     }
 
 
+    // customize toolbar backbutton to maintain back stack
     private fun addDestinationChangeListener() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            when (destination.id) {
-                R.id.PaymentConclusionFragment -> {
-                    binding.toolbar.navigationIcon = null
-
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            binding.toolbar.setNavigationOnClickListener {
+                when (destination.id) {
+                    R.id.ProceedToPayFragment -> {
+                        finish()
+                    }
+                    R.id.SecurePaymentWebviewFragment -> {
+                        navController.navigate(SecurePaymentWebviewFragmentDirections.actionSecurePaymentWebviewFragmentToProceedToPayFragment())
+                    }
+                    R.id.PaymentConclusionFragment -> {
+                        navController.navigate(PaymentConclusionFragmentDirections.actionPaymentConclusionFragmentToProceedToPayFragment())
+                    }
                 }
             }
         }
@@ -64,18 +74,9 @@ class CheckoutMainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // throwing user out of the app, if pressing back from 3dsecure screen
-        if (navController.currentDestination?.id == R.id.SecurePaymentWebviewFragment) {
-            finish()
-        }
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
+    //disable system back button at the moment
     override fun onBackPressed() {
-        super.onBackPressed()
-        onSupportNavigateUp()
+        binding.parentConstrainLayout.snackbar(getString(R.string.msg_use_ui_back))
     }
 
 }

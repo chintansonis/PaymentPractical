@@ -14,6 +14,7 @@
     <string name="payment_success_msg">Payment successfully completed</string>
     <string name="success_url">https://www.success.com</string>
     <string name="fail_url">https://fail.com</string>
+    <string name="msg_use_ui_back">Use UI back button.</string>
 
     ******************hint messages**************
     <string name="hint_enter_cvv">Enter CVV</string>
@@ -28,5 +29,6 @@
     <string name="error_invalid_number">Please enter valid card number</string>
     <string name="error_invalid_expiry_date">Please enter valid expiry date of card</string>
     <string name="error_invalid_cvv">Please enter valid CVV</string>
+    <string name="dont_press_back_while_payment">You can not press back button while payment is in processing state.</string>
 
 </resources>

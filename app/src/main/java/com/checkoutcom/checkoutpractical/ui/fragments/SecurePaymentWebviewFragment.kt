@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -48,13 +47,6 @@ class SecurePaymentWebviewFragment : Fragment() {
         }
         initWebView()
         observeUI()
-
-        // throwing user out of the app, if pressing back from 3dsecure screen
-        requireActivity().onBackPressedDispatcher.addCallback(this) {
-            if (binding.webView.canGoBack()) {
-                requireActivity().onBackPressed()
-            }
-        }
     }
 
     private fun observeUI() {
