@@ -14,11 +14,13 @@ import androidx.navigation.fragment.findNavController
 import com.checkoutcom.checkoutpractical.R
 import com.checkoutcom.checkoutpractical.databinding.FragmentSecurePaymentWebviewBinding
 import com.checkoutcom.checkoutpractical.ui.viewmodels.SecurePaymentWebviewViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
 /**
  * SecurePaymentWebviewFragment responsible for 3dSecure payment
  */
+@AndroidEntryPoint
 class SecurePaymentWebviewFragment : Fragment() {
 
     private var _binding: FragmentSecurePaymentWebviewBinding? = null
@@ -82,6 +84,8 @@ class SecurePaymentWebviewFragment : Fragment() {
                 request: WebResourceRequest?,
             ): Boolean {
                 securePaymentWebviewViewModel.setisDataLoading(true)
+                // while user entered the 3dsecure code, webview overrideurl method would be called and update status to in progress status
+                securePaymentWebviewViewModel.storePaymentStatus(getString(R.string.payment_in_progress))
                 return super.shouldOverrideUrlLoading(view, request)
             }
 
@@ -90,8 +94,6 @@ class SecurePaymentWebviewFragment : Fragment() {
                 setPaymentConclusionMessage(url)
             }
         }
-
-
     }
 
     /**
@@ -100,11 +102,16 @@ class SecurePaymentWebviewFragment : Fragment() {
     private fun setPaymentConclusionMessage(url: String) {
         when {
             url.contains(getString(R.string.success_url)) -> {
+                securePaymentWebviewViewModel.storePaymentStatus(getString(R.string.payment_in_completed))
                 securePaymentWebviewViewModel.setPaymentConclusionMessage(getString(R.string.payment_success_msg))
             }
             url.contains(getString(R.string.fail_url)) -> {
+                securePaymentWebviewViewModel.storePaymentStatus(getString(R.string.payment_in_completed))
                 securePaymentWebviewViewModel.setPaymentConclusionMessage(getString(R.string.payment_fail_msg))
+
             }
+            else -> securePaymentWebviewViewModel.storePaymentStatus(getString(R.string.payment_not_started))
+
         }
     }
 

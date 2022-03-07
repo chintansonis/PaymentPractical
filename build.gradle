@@ -9,6 +9,7 @@ buildscript {
         coil_version = "1.4.0"
         okHttpInterceptor_version = '4.9.1'
         coroutine_version = '1.6.0'
+        datastore_version = '1.0.0'
         junitVersion = '4.13.2'
     }
     repositories {

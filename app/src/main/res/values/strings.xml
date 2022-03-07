@@ -15,7 +15,9 @@
     <string name="success_url">https://www.success.com</string>
     <string name="fail_url">https://fail.com</string>
     <string name="msg_use_ui_back">Use UI back button.</string>
-
+    <string name="payment_in_progress">Payment in Progress</string>
+    <string name="payment_in_completed">Payment Completed</string>
+    <string name="payment_not_started">Payment not Started</string>
     ******************hint messages**************
     <string name="hint_enter_cvv">Enter CVV</string>
     <string name="hint_enter_expiry_date">Enter Expiry date (MM/YYYY)</string>
@@ -30,5 +32,6 @@
     <string name="error_invalid_expiry_date">Please enter valid expiry date of card</string>
     <string name="error_invalid_cvv">Please enter valid CVV</string>
     <string name="dont_press_back_while_payment">You can not press back button while payment is in processing state.</string>
+
 
 </resources>
