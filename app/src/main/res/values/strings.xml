@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CheckoutPractical</string>
     <string name="action_settings">Settings</string>
+    <string name="btn_buy">Buy Burger for £10</string>
     <!-- Strings used for fragments for navigation -->
     <string name="proceed_to_checkout_fragment_label">Add Card</string>
     <string name="secure_payment_webview_fragment_label">3D Secure Payment</string>
@@ -32,6 +33,7 @@
     <string name="error_invalid_expiry_date">Please enter valid expiry date of card</string>
     <string name="error_invalid_cvv">Please enter valid CVV</string>
     <string name="dont_press_back_while_payment">You can not press back button while payment is in processing state.</string>
+    <string name="checkout_sdk_demo">CheckoutSDKDemo</string>
 
 
 </resources>

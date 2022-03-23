@@ -3,8 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ProceedToPayFragment">
+    app:startDestination="@id/checkoutSDKDemoFragment">
+    <fragment
+        android:id="@+id/checkoutSDKDemoFragment"
+        android:name="com.checkoutcom.checkoutpractical.ui.fragments.CheckoutSDKDemoFragment"
+        android:label="@string/checkout_sdk_demo"
+        tools:layout="@layout/fragment_headless_demo">
 
+        <action
+            android:id="@+id/action_CheckoutSDKDemoFragment_to_ProceedToPayFragment"
+            app:destination="@id/ProceedToPayFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            />
+    </fragment>
     <fragment
         android:id="@+id/ProceedToPayFragment"
         android:name="com.checkoutcom.checkoutpractical.ui.fragments.ProceedToCheckoutFragment"
@@ -19,6 +33,15 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
              />
+        <action
+            android:id="@+id/action_ProceedToPayFragment_to_CheckoutSDKDemoFragment"
+            app:destination="@id/checkoutSDKDemoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/checkoutSDKDemoFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/SecurePaymentWebviewFragment"
@@ -55,9 +78,9 @@
             android:name="paymentMessage"
             app:argType="string" />
         <action
-            android:id="@+id/action_PaymentConclusionFragment_to_ProceedToPayFragment"
-            app:destination="@id/ProceedToPayFragment"
-            app:popUpTo="@id/ProceedToPayFragment"
+            android:id="@+id/action_PaymentConclusionFragment_to_CheckoutSDKDemoFragment"
+            app:destination="@id/checkoutSDKDemoFragment"
+            app:popUpTo="@id/checkoutSDKDemoFragment"
             app:popUpToInclusive="true"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"

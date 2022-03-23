@@ -9,7 +9,11 @@
     <dimen name="padding_30">30dp</dimen>
     <dimen name="padding_20">20dp</dimen>
     <dimen name="padding_200">200dp</dimen>
-
+    <dimen name="padding_180">180dp</dimen>
+    <dimen name="padding_172">172dp</dimen>
+    <dimen name="padding_153dp">154dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
+    <dimen name="padding_301">301dp</dimen>
     ***********text size****************
     <dimen name="text_size_18sp">18sp</dimen>
     <dimen name="text_size_16sp">16sp</dimen>

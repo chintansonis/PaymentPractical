@@ -34,7 +34,7 @@ object NetworkModule {
     fun provideRetrofit(okhHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okhHttpClient)
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl("https://integrations-cko.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

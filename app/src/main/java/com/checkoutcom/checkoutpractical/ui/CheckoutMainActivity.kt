@@ -13,6 +13,7 @@ import com.checkoutcom.checkoutpractical.R
 import com.checkoutcom.checkoutpractical.databinding.ActivityMainBinding
 import com.checkoutcom.checkoutpractical.extensions.snackbar
 import com.checkoutcom.checkoutpractical.ui.fragments.PaymentConclusionFragmentDirections
+import com.checkoutcom.checkoutpractical.ui.fragments.ProceedToCheckoutFragmentDirections
 import com.checkoutcom.checkoutpractical.ui.fragments.SecurePaymentWebviewFragmentDirections
 import com.checkoutcom.checkoutpractical.ui.viewmodels.CheckOutMainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,14 +52,17 @@ class CheckoutMainActivity : AppCompatActivity() {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             binding.toolbar.setNavigationOnClickListener {
                 when (destination.id) {
-                    R.id.ProceedToPayFragment -> {
+                    R.id.checkoutSDKDemoFragment -> {
                         finish()
+                    }
+                    R.id.ProceedToPayFragment -> {
+                        navController.navigate(ProceedToCheckoutFragmentDirections.actionProceedToPayFragmentToCheckoutSDKDemoFragment())
                     }
                     R.id.SecurePaymentWebviewFragment -> {
                         navigateToConclusionFragment()
                     }
                     R.id.PaymentConclusionFragment -> {
-                        navController.navigate(PaymentConclusionFragmentDirections.actionPaymentConclusionFragmentToProceedToPayFragment())
+                        navController.navigate(PaymentConclusionFragmentDirections.actionPaymentConclusionFragmentToCheckoutSDKDemoFragment())
                     }
                 }
             }

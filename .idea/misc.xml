@@ -20,6 +20,10 @@
         <entry key="..\:/chintan_ws/Bhoykavaladada/CheckoutPractical/app/src/main/res/layout/item_loading.xml" value="0.27291666666666664" />
         <entry key="..\:/chintan_ws/Bhoykavaladada/CheckoutPractical/app/src/main/res/layout/loading_dialog.xml" value="0.27291666666666664" />
         <entry key="..\:/chintan_ws/Bhoykavaladada/CheckoutPractical/app/src/main/res/menu/menu_main.xml" value="0.18055555555555555" />
+        <entry key="app/src/main/res/drawable-xhdpi/ic_burger.xml" value="0.1895" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.31875" />
+        <entry key="app/src/main/res/layout/fragment_checkout.xml" value="0.31875" />
+        <entry key="app/src/main/res/layout/fragment_demo.xml" value="0.31875" />
       </map>
     </option>
   </component>
