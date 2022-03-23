@@ -1,13 +1,16 @@
 package com.checkoutcom.checkoutpractical.extensions
 
 import android.content.Context
+import android.content.DialogInterface
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.StyleRes
 import com.checkoutcom.checkoutpractical.utils.CreditCardExpiryInputFilter
 import com.checkoutcom.checkoutpractical.utils.CreditCardFormatTextWatcher
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
@@ -63,5 +66,39 @@ fun TextInputEditText.setExpiryDateFilter() {
 fun Context.hideKeyboard(view: View) {
     val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(view.windowToken, 0)
+}
+
+fun Context.alert(
+    @StyleRes style: Int = 0,
+    dialogBuilder: MaterialAlertDialogBuilder.() -> Unit
+) {
+    MaterialAlertDialogBuilder(this, style)
+        .apply {
+            setCancelable(false)
+            dialogBuilder()
+            create()
+            show()
+        }
+}
+
+fun MaterialAlertDialogBuilder.negativeButton(
+    text: String = "No",
+    handleClick: (dialogInterface: DialogInterface) -> Unit = { it.dismiss() }
+) {
+    this.setNegativeButton(text) { dialogInterface, _ -> handleClick(dialogInterface) }
+}
+
+fun MaterialAlertDialogBuilder.positiveButton(
+    text: String = "Yes",
+    handleClick: (dialogInterface: DialogInterface) -> Unit = { it.dismiss() }
+) {
+    this.setPositiveButton(text) { dialogInterface, _ -> handleClick(dialogInterface) }
+}
+
+fun MaterialAlertDialogBuilder.neutralButton(
+    text: String = "OK",
+    handleClick: (dialogInterface: DialogInterface) -> Unit = { it.dismiss() }
+) {
+    this.setNeutralButton(text) { dialogInterface, _ -> handleClick(dialogInterface) }
 }
 

@@ -41,15 +41,15 @@ class ProceedCheckOutViewModel @Inject constructor(
     fun onClickProceedToPayment() {
         if (isCardValid()) {
             viewModelScope.launch {
-                val postPaymentProcess =
-                    postPaymentProcessUseCase.execute(RequestPayment(cvv = cardCVV.value,
-                        CardUtil.returnExpiryDateOfMonthYear(cardExpiry.value)?.get(0),
-                        CardUtil.returnExpiryDateOfMonthYear(cardExpiry.value)?.get(1),
-                        "https://fail.com",
-                        cardNumber.value,
-                        "https://www.success.com"))
-                _responseCheckoutLiveData.value = postPaymentProcess
-                _errorMessage.value = determineErrorMessage(postPaymentProcess.error)
+//                val postPaymentProcess =
+//                    postPaymentProcessUseCase.execute(RequestPayment(cvv = cardCVV.value,
+//                        CardUtil.returnExpiryDateOfMonthYear(cardExpiry.value)?.get(0),
+//                        CardUtil.returnExpiryDateOfMonthYear(cardExpiry.value)?.get(1),
+//                        "https://fail.com",
+//                        cardNumber.value,
+//                        "https://www.success.com"))
+//                _responseCheckoutLiveData.value = postPaymentProcess
+//                _errorMessage.value = determineErrorMessage(postPaymentProcess.error)
             }
         }
 
