@@ -34,7 +34,7 @@ class CheckoutSDKDemoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        //test commit
+        //test commit last check
        binding.btnBuy.setOnClickListener {
            findNavController().navigate(CheckoutSDKDemoFragmentDirections.actionCheckoutSDKDemoFragmentToCheckoutSDKUIDemoFragment())
        }
