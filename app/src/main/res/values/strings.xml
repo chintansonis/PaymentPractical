@@ -34,6 +34,7 @@
     <string name="error_invalid_cvv">Please enter valid CVV</string>
     <string name="dont_press_back_while_payment">You can not press back button while payment is in processing state.</string>
     <string name="checkout_sdk_demo">CheckoutSDKDemo</string>
+    <string name="checkout_sdk_ui_demo">CheckoutSDKUIDemo</string>
     <string name="secret_key">pk_test_6e40a700-d563-43cd-89d0-f9bb17d35e73</string>
     <string name="token_generated">Token generated</string>
     <string name="network_error">Network error</string>
