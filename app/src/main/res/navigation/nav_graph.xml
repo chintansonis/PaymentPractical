@@ -8,23 +8,17 @@
         android:id="@+id/checkoutSDKDemoFragment"
         android:name="com.checkoutcom.checkoutpractical.ui.fragments.CheckoutSDKDemoFragment"
         android:label="@string/checkout_sdk_demo"
-        tools:layout="@layout/fragment_buy_btn_ui">
+        tools:layout="@layout/fragment_headless_demo">
 
         <action
-            android:id="@+id/action_CheckoutSDKDemoFragment_to_checkoutSDKUIDemoFragment"
-            app:destination="@id/checkoutSDKUIDemoFragment"
+            android:id="@+id/action_CheckoutSDKDemoFragment_to_ProceedToPayFragment"
+            app:destination="@id/ProceedToPayFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             />
     </fragment>
-
-    <fragment
-        android:id="@+id/checkoutSDKUIDemoFragment"
-        android:name="com.checkoutcom.checkoutpractical.ui.fragments.CheckoutSDKUIDemoFragment"
-        android:label="@string/checkout_sdk_demo"
-        tools:layout="@layout/fragment_buy_btn_ui"/>
     <fragment
         android:id="@+id/ProceedToPayFragment"
         android:name="com.checkoutcom.checkoutpractical.ui.fragments.ProceedToCheckoutFragment"
