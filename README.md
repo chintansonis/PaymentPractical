@@ -13,9 +13,12 @@ Features:
 1. detecting cards Visa,MasterCard, AmericanExpress, DinersClub,Discover, Jcb.
 2. Managed optimal scenario for validation of card like card number and cvv validation etc.
 References for Card validation:
-1. Credit card numbers validation references taken from https://github.com/checkout/frames-android/tree/master/android-sdk/src/main/java/com/checkout/android_sdk </br>
+3. Credit card numbers validation references taken from https://github.com/checkout/frames-android/tree/master/android-sdk/src/main/java/com/checkout/android_sdk </br>
 2 Credit card numbers also needed to pass Luhn validation - see https://en.wikipedia.org/wiki/Luhn_algorithm </br>
 3 The CVV had to meet these criteria: Reference from checkout SDK to understand validation
+
+
+
 
 ## App Clean architecture, design pattern and latest techstack reference
 1. MVVM Design pattern</br>
